@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mustache from 'mustache-express';
 import path from 'path';
 import mainRoutes from './routes/index';
+import { access } from 'fs/promises';
 
 dotenv.config();
 
@@ -20,4 +21,4 @@ server.use((req, res) => {
   res.render('pages/404');
 });
 
-server.listen(4000);
+server.listen(process.env.PORT);
